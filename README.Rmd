@@ -42,6 +42,7 @@ the rows representing a parameter. Please look at one of the files as an example
 #Output
 ## Summary Table
 ```{r SummaryTable, echo=FALSE, eval=TRUE}
+options("scipen"=100, "digits"=4)
 summarytable <- read.csv("./Output/SummaryTable.csv")
 knitr::kable(summarytable)
 ```
