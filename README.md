@@ -6,7 +6,7 @@ August 9, 2018
 Description
 ===========
 
-This is an analysis to evaluate the limits of the parameters used in WATFLOOD. The code and parameter sets are available here. If you would like to add your own parameter set to this analysis, please contact <jbomhof@lwcb.ca>.
+This is an analysis to evaluate the limits of the parameters used in WATFLOOD. This analysis is available on a pdf or at <https://github.com/jimmybom/WATFLOOD_Parameters> where you can find the most up-to-date code and parameter sets. If you would like to add your own parameter set to this analysis, please contact <jbomhof@lwcb.ca>.
 
 The analysis is meant to be used as a starting point for model calibration. I have used these data to set parameter limits using the [Ostrich Calibration Software](http://www.eng.buffalo.edu/~lsmatott/Ostrich/OstrichMain.html). The analysis ingests the available parameter sets and collates them to a single data set. Percentiles are calculated for each parameter to give the user a range and median. Boxplots are generated for each landclass parameter where each column differentiates the different landclasses (e.g. forested, shrub, wetland, etc). Boxplots are also generated for River classes but are instead differentiated by basin because there is no common structure as to how river classes are spatially defined. All of the output is stored in the [Output folder](https://github.com/jimmybom/WATFLOOD_Parameters/tree/master/Output), and also shown below.
 
@@ -28,47 +28,45 @@ Output
 Summary Table
 -------------
 
-|    X| Parameter    |        min|          max|       fifth|  ninetyfifth|    median|
-|----:|:-------------|----------:|------------:|-----------:|------------:|---------:|
-|    1| a5           |   9.85e-01|  9.85000e-01|   0.9850000|     0.985000|   0.98500|
-|    2| ak           |  -1.00e+00|  4.00000e+02|   0.0000000|    71.307190|   8.00000|
-|    3| ak2          |   0.00e+00|  9.60000e-01|   0.0000000|     0.476000|   0.06600|
-|    4| ak2fs        |  -4.32e+08|  9.60000e-01|   0.0000000|     0.492000|   0.03800|
-|    5| akfs         |  -1.00e+00|  4.00000e+02|   0.0000000|    87.601600|   2.00000|
-|    6| alb          |   0.00e+00|  1.80000e-01|   0.1100000|     0.180000|   0.11000|
-|    7| base         |  -9.90e+01|  1.12000e+01|  -3.5140000|     2.730000|  -1.00000|
-|    8| ds           |   0.00e+00|  1.20000e+10|   0.0000000|    20.000000|   1.20000|
-|    9| dsfs         |   0.00e+00|  2.20000e+10|   0.0000000|    28.500000|   1.70000|
-|   10| fcap         |   1.50e-01|  1.00000e+00|   0.1500000|     0.300000|   0.15000|
-|   11| ffcap        |   8.00e-02|  1.00000e+00|   0.1000000|     0.500000|   0.10000|
-|   12| flint        |   0.00e+00|  1.00000e+00|   1.0000000|     1.000000|   1.00000|
-|   13| flz          |   0.00e+00|  7.50000e-01|   0.0000009|     0.004648|   0.00005|
-|   14| fm           |   4.20e-02|  8.14000e-01|   0.0580000|     0.470250|   0.11200|
-|   15| fmn          |   0.00e+00|  1.37000e-01|   0.0343500|     0.100000|   0.10000|
-|   16| fpet         |   0.00e+00|  8.25000e+00|   0.9020000|     3.000000|   2.00000|
-|   17| fratio       |   1.80e-01|  4.40000e+00|   0.6000000|     1.449000|   1.00000|
-|   18| ftall        |   0.00e+00|  1.30000e+00|   0.0000000|     1.000000|   0.70000|
-|   19| kcond        |   1.63e-02|  1.00000e+01|   0.1000000|     2.000000|   0.23200|
-|   20| mndr         |   1.00e+00|  1.50000e+00|   1.0000000|     1.125000|   1.00000|
-|   21| pwr          |   1.24e+00|  3.92000e+00|   1.5800000|     3.840000|   2.75000|
-|   22| r1           |   4.00e-03|  2.00000e+00|   0.0075000|     2.000000|   0.40000|
-|   23| r2           |   1.00e-03|  3.86202e+00|   0.0019310|     1.534000|   0.01750|
-|   24| r3           |   0.00e+00|  9.20000e+02|   0.0089800|    84.800000|  19.70000|
-|   25| r3fs         |   0.00e+00|  5.00000e+02|   0.1000000|    30.000000|  10.00000|
-|   26| r4           |   0.00e+00|  1.00000e+01|   1.0000000|    10.000000|  10.00000|
-|   27| rec          |   0.00e+00|  4.12000e+01|   0.0001000|     3.989500|   0.51350|
-|   28| retn         |   0.00e+00|  4.56000e+02|   0.0000000|   299.550000|  53.55000|
-|   29| rho          |   3.30e-01|  6.00000e-01|   0.3300000|     0.500000|   0.33300|
-|   30| spore        |   2.50e-01|  1.00000e+00|   0.3000000|     0.300000|   0.30000|
-|   31| sublim\_rate |   0.00e+00|  2.00000e+00|   0.0100000|     0.959000|   0.25000|
-|   32| theta        |   1.00e-01|  2.50000e+00|   0.1107000|     1.000000|   0.39200|
-|   33| tipm         |   1.00e-01|  2.00000e-01|   0.1000000|     0.200000|   0.10000|
-|   34| whcl         |   3.50e-02|  5.00000e-02|   0.0350000|     0.040000|   0.03500|
+|    X| Parameter    |       min|        max|    fifth|  ninetyfifth|   median|
+|----:|:-------------|---------:|----------:|--------:|------------:|--------:|
+|    1| a5           |    0.9850|  9.850e-01|   0.9850|       0.9850|   0.9850|
+|    2| ak           |   -1.0000|  4.000e+02|  -0.1000|      99.9400|   9.0000|
+|    3| ak2          |    0.0000|  9.600e-01|   0.0000|       0.3341|   0.0502|
+|    4| ak2fs        |    0.0000|  9.600e-01|   0.0000|       0.5155|   0.0240|
+|    5| akfs         |   -1.0000|  4.000e+02|  -0.1000|      99.9700|   2.0000|
+|    6| alb          |    0.0000|  1.800e-01|   0.1100|       0.1800|   0.1100|
+|    7| base         |  -99.0000|  1.120e+01|  -2.5000|       2.7300|  -0.9580|
+|    8| ds           |    0.0000|  1.200e+10|   0.0000|     122.1000|   1.0000|
+|    9| dsfs         |    0.0000|  2.200e+10|   0.0000|     220.0000|   2.0000|
+|   10| fcap         |    0.1500|  1.000e+00|   0.1500|       0.1500|   0.1500|
+|   11| ffcap        |    0.0800|  1.000e+00|   0.1000|       0.1000|   0.1000|
+|   12| flint        |    1.0000|  1.000e+00|   1.0000|       1.0000|   1.0000|
+|   13| flz          |    0.0000|  7.500e-01|   0.0000|       0.0046|   0.0000|
+|   14| fm           |    0.0510|  8.140e-01|   0.0600|       0.4212|   0.1120|
+|   15| fmn          |    0.0000|  1.370e-01|   0.0000|       0.1000|   0.1000|
+|   17| fratio       |    0.6000|  1.500e+00|   0.7050|       1.4650|   1.0000|
+|   19| kcond        |    0.0163|  1.000e+01|   0.1000|       2.0000|   0.2320|
+|   20| mndr         |    1.0000|  1.500e+00|   1.0000|       1.1250|   1.0000|
+|   21| pwr          |    1.2400|  3.920e+00|   1.5800|       3.8400|   2.7500|
+|   22| r1           |    0.0040|  2.000e+00|   0.0075|       2.0000|   0.4000|
+|   23| r2           |    0.0010|  3.862e+00|   0.0019|       1.5340|   0.0175|
+|   24| r3           |    0.0000|  9.200e+02|   0.0090|      84.8000|   8.9800|
+|   25| r3fs         |    0.0000|  5.000e+02|   0.0400|      30.0000|  10.0000|
+|   26| r4           |    0.0000|  1.000e+01|   0.3800|      10.0000|  10.0000|
+|   27| rec          |    0.0000|  4.120e+01|   0.0002|       3.9510|   0.5060|
+|   28| retn         |    0.0000|  4.560e+02|   0.0000|     313.5000|  50.0000|
+|   29| rho          |    0.3300|  6.000e-01|   0.3300|       0.3330|   0.3330|
+|   30| spore        |    0.2500|  1.000e+00|   0.3000|       0.3325|   0.3000|
+|   31| sublim\_rate |    0.0000|  4.000e-01|   0.0100|       0.4000|   0.1100|
+|   32| theta        |    0.1000|  2.500e+00|   0.1107|       1.0000|   0.3920|
+|   33| tipm         |    0.1000|  2.000e-01|   0.1000|       0.2000|   0.1000|
+|   34| whcl         |    0.0350|  5.000e-02|   0.0350|       0.0400|   0.0350|
 
 Plots
 -----
 
-![](./Output/maxmintable.csv)![](./Output/Param_Land_ak.png)![](./Output/Param_Land_ak2.png)![](./Output/Param_Land_ak2fs.png)![](./Output/Param_Land_akfs.png)![](./Output/Param_Land_alb.png)![](./Output/Param_Land_base.png)![](./Output/Param_Land_ds.png)![](./Output/Param_Land_dsfs.png)![](./Output/Param_Land_fcap.png)![](./Output/Param_Land_ffcap.png)![](./Output/Param_Land_flint.png)![](./Output/Param_Land_fm.png)![](./Output/Param_Land_fmn.png)![](./Output/Param_Land_fpet.png)![](./Output/Param_Land_fratio.png)![](./Output/Param_Land_ftall.png)![](./Output/Param_Land_r3.png)![](./Output/Param_Land_r3fs.png)![](./Output/Param_Land_r4.png)![](./Output/Param_Land_rec.png)![](./Output/Param_Land_retn.png)![](./Output/Param_Land_rho.png)![](./Output/Param_Land_spore.png)![](./Output/Param_Land_sublim_rate.png)![](./Output/Param_Land_tipm.png)![](./Output/Param_Land_whcl.png)![](./Output/Param_River_flz.png)![](./Output/Param_River_kcond.png)![](./Output/Param_River_mndr.png)![](./Output/Param_River_pwr.png)![](./Output/Param_River_r1.png)![](./Output/Param_River_r2.png)![](./Output/Param_River_theta.png)![](./Output/SummaryTable.csv)
+![](./Output/Param_Land_ak.png)![](./Output/Param_Land_ak2.png)![](./Output/Param_Land_ak2fs.png)![](./Output/Param_Land_akfs.png)![](./Output/Param_Land_alb.png)![](./Output/Param_Land_base.png)![](./Output/Param_Land_ds.png)![](./Output/Param_Land_dsfs.png)![](./Output/Param_Land_fcap.png)![](./Output/Param_Land_ffcap.png)![](./Output/Param_Land_flint.png)![](./Output/Param_Land_fm.png)![](./Output/Param_Land_fmn.png)![](./Output/Param_Land_fpet.png)![](./Output/Param_Land_fratio.png)![](./Output/Param_Land_ftall.png)![](./Output/Param_Land_r3.png)![](./Output/Param_Land_r3fs.png)![](./Output/Param_Land_r4.png)![](./Output/Param_Land_rec.png)![](./Output/Param_Land_retn.png)![](./Output/Param_Land_rho.png)![](./Output/Param_Land_spore.png)![](./Output/Param_Land_sublim_rate.png)![](./Output/Param_Land_tipm.png)![](./Output/Param_Land_whcl.png)![](./Output/Param_River_flz.png)![](./Output/Param_River_kcond.png)![](./Output/Param_River_mndr.png)![](./Output/Param_River_pwr.png)![](./Output/Param_River_r1.png)![](./Output/Param_River_r2.png)![](./Output/Param_River_theta.png)![](./Output/SummaryTable.csv)
 
 References
 ==========
@@ -108,6 +106,7 @@ library(stringr)
 library(reshape2)
 library(ggplot2)
 
+options("scipen"=100, "digits"=4)
 script.directory <- getwd()
 
 #define folders
@@ -260,10 +259,21 @@ median <-
             quantile,
             0.50,
             na.rm = T)
-maxmin_table <- cbind(mins, maxes[, 2], lower[, 2], upper[, 2], median[, 2])
+maxmin_table <- cbind(mins,
+                      maxes[, 2],
+                      lower[, 2], 
+                      upper[, 2], 
+                      median[, 2])
 names(maxmin_table) <-
   c("Parameter", "min", "max", "fifth", "ninetyfifth", "median")
-write.csv(maxmin_table, file.path(output.directory, "maxmintable.csv"))
+
+#round to 4 decimal places
+maxmin_table[,-1] <- round(maxmin_table[,-1],4)
+
+#remove Fpet and Ftall because they should use textbook values
+maxmin_table <- maxmin_table[!(maxmin_table$Parameter %in% c("fpet","ftall")),]
+
+write.csv(maxmin_table, file.path(output.directory, "SummaryTable.csv"))
 
 
 

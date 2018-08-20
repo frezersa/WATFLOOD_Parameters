@@ -10,8 +10,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Description
-This is an analysis to evaluate the limits of the parameters used in WATFLOOD. The code and parameter sets
-are available here. If you would like to add your own parameter set to this analysis, please contact jbomhof@lwcb.ca.
+This is an analysis to evaluate the limits of the parameters used in WATFLOOD. This analysis is available on a pdf or at
+[https://github.com/jimmybom/WATFLOOD_Parameters](https://github.com/jimmybom/WATFLOOD_Parameters) where you can find
+the most up-to-date code and parameter sets. If you would like to add your own parameter set to this analysis, 
+please contact jbomhof@lwcb.ca.
 
 The analysis is meant to be used as a starting point for model calibration. I have used these data to set parameter limits
 using the [Ostrich Calibration Software](http://www.eng.buffalo.edu/~lsmatott/Ostrich/OstrichMain.html). The analysis ingests 
@@ -98,6 +100,7 @@ library(stringr)
 library(reshape2)
 library(ggplot2)
 
+options("scipen"=100, "digits"=4)
 script.directory <- getwd()
 
 #define folders
@@ -250,10 +253,21 @@ median <-
             quantile,
             0.50,
             na.rm = T)
-maxmin_table <- cbind(mins, maxes[, 2], lower[, 2], upper[, 2], median[, 2])
+maxmin_table <- cbind(mins,
+                      maxes[, 2],
+                      lower[, 2], 
+                      upper[, 2], 
+                      median[, 2])
 names(maxmin_table) <-
   c("Parameter", "min", "max", "fifth", "ninetyfifth", "median")
-write.csv(maxmin_table, file.path(output.directory, "maxmintable.csv"))
+
+#round to 4 decimal places
+maxmin_table[,-1] <- round(maxmin_table[,-1],4)
+
+#remove Fpet and Ftall because they should use textbook values
+maxmin_table <- maxmin_table[!(maxmin_table$Parameter %in% c("fpet","ftall")),]
+
+write.csv(maxmin_table, file.path(output.directory, "SummaryTable.csv"))
 
 
 
